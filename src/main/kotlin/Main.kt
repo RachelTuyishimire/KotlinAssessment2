@@ -2,27 +2,31 @@ fun main() {
 //    Question Three
     multiples()
 
+// Question Four
+    var currentAccount =  (listOf<CurrentAccount>())
 }
 //Question One
 //Write and invoke one function that takes in a random string and returns the
 //following values: first character, last character, length of the string and
 //whether it begins with a vowel or not. (6pts)
-// class StringInfo( var words: String){
-//     fun firstChar(words: StringInfo){
-////         for (word in words)
-//             var charOne =  words[0]
-//             return charOne
-//     }
-//    fun lastChar(){
-//        for (word in words)
-//            var charlast = words[-1]
-//        return charlast
-//
-//    }
-//    fun stringLength (words: StringInfo){
-//        return words.Length()
-//    }
-// }
+ class StringInfo( var words: String){
+     fun firstChar():StringInfo{
+         for (word in words)
+             var charOne =  words[0]
+             return (words[0])
+     }
+    fun lastChar(words: StringInfo): String{
+        for (word in words)
+            var charlast = words[-1]
+        return charlast
+
+    }
+    fun stringLength (words: String): Int{
+        return words.length
+    }
+
+
+ }
 
 //Question two
 //Create a function that takes in a password as a parameter. For a password to
@@ -34,9 +38,15 @@ fun main() {
 //Your function should determine whether the password provided is valid or not.
 //The function returns true/false
 
-//fun validatePassword(password: String){
-//    while ()
-//}
+fun validatePassword(passwords: String){
+    for (password in passwords)
+        if (password >= 16){
+
+        }
+
+
+
+}
 
 
 //Question Three
@@ -60,15 +70,24 @@ fun multiples (){
 //withdrawn
 //c. details() - Prints out the account number and balance and name in
 //this format: “Account number x with balance y is operated by z”
-// data class Account (var accountNumber: Int, var accountName: String, var balance: Double, var teller: String)
-//
-//class CurrentAccount(){
-//    fun deposit(amount: Double): Account{
-//        var newbalance = amount + balance
-//
-//
-//    }
-////}
+ data class Account (var accountNumber: Int, var accountName: String, var balance: Double, var teller: String)
+
+open class CurrentAccount(){
+    var accountInfo= mutableListOf<Account>()
+    fun deposit(balance: Double, amount:Double): Double{
+        var newbalance = balance+amount
+        return newbalance
+
+
+    }
+    fun withdraw(balance: Double, amount:Double): Double{
+        var withdrew = balance - amount
+        return withdrew
+    }
+    fun details(accountNumber: Int, accountName: String, balance: Double,  teller: String){
+        println ("Account number $accountNumber with balance $balance operated by $teller")
+    }
+}
 //Question Five
 //    Create another class SavingsAccount. It has the same functions and
 //    attributes as the current account except for one attribute, withdrawals: Int.
@@ -78,6 +97,9 @@ fun multiples (){
 //    number of withdrawals is less than 4 for it to allow one to withdraw money
 //    from the account. It also increments the withdrawals attribute after a
 //    successful withdrawal (6pts)
+
+override SavingAccount()
+
 
 
 
